@@ -1,0 +1,12 @@
+#/bin/bash
+
+echo "Usage: $0 <IP range> <port> <IP range output>\n"
+
+echo "Generating IP range file\n"
+
+python2 ./make-list.py $1 > $3
+
+echo "Generated IP range file and saved it under $3\n"
+
+echo "Scanning for port $2 in the generated range..."
+nmap -p $2 -iL $3 -v | tee nmap-output.txt
