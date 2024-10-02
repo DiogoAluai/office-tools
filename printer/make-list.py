@@ -1,4 +1,5 @@
-#Built with python2
+#!/usr/bin/env python2
+
 import itertools
 import sys
 
@@ -16,5 +17,5 @@ try:
 except Exception as c:
 	print(c)
 	print()
-	print("Run with python2")
+	print("Run with python2, and provide ip range")
 	print("Example: python2 192.168.1-2.1-12")
