@@ -1,3 +1,5 @@
 #/usr/bin/env bash
 
-cowsay-random $1 | tr '\n' 'l' | sed 's/l/\r\n/g' | nc $PRINTER_IP 9100
+# sed will add '\r' character at the end of the line, just before '\n'
+# this is needed because printer will not reset printing column to zero on line change with '\n' alone
+cowsay-random $1 | sed 's/$/\r/' | office-print

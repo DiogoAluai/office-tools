@@ -46,4 +46,5 @@ fi
 install_script printer/find-printer.sh
 install_script printer/make-list.py
 install_script printer/cowsay-random.sh
+install_script printer/office-print.sh
 install_script printer/print-random-cow.sh
