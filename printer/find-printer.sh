@@ -2,7 +2,7 @@
 
 
 # Check arguments
-if [ $# -lt 3 ]; then
+if [ $# -ne 3 ]; then
     echo "Usage: $0 <IP range> <port> <IP range output>"
     echo ""
     exit 1
