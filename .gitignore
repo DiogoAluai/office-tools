@@ -1,5 +1,6 @@
 # Project specific
 nmap-output.txt
+printer/find-printer-ip.sh
 
 # Autism friendly section
 tmp
