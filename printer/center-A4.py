@@ -45,24 +45,26 @@ lines = sys.stdin.read().splitlines()
 
 minX = first_non_empty_string_index(lines)
 maxX = last_non_empty_string_index(lines)
-minY = 0
-maxY = last_non_whitespace_index(lines[0])
+minY = A4_COLS
+maxY = 0
 
 for line in lines:
     firsCharIndex = first_non_whitespace_index(line)
     if firsCharIndex != -1:
         minY = min(minY, firsCharIndex)
-    maxY = max(maxY, last_non_whitespace_index(line))
+    lastCharIndex = last_non_whitespace_index(line)
+    if lastCharIndex != -1:
+        maxY = max(maxY, lastCharIndex)
 
 lenX = maxX - minX + 1
 lenY = maxY - minY + 1
 
 if (lenX > A4_ROWS or lenX <= 0):
-    print("Line count " + lenX + " is not in ]0, 58[")
+    print("Line count " + str(lenX) + " is not in ]0, 58[")
     sys.exit()
 
 if (lenY > A4_COLS or lenY <= 0):
-    print("Column count " + lenY + " is not in ]0, 78[")
+    print("Column count " + str(lenY) + " is not in ]0, 78[")
     sys.exit()
 
 linePadding = A4_ROWS - lenX
@@ -71,10 +73,9 @@ halfLinePadding = linePadding / 2 # line loss for odd padding
 columnPadding = A4_COLS - lenY
 halfColumnPadding = columnPadding / 2 # column loss for odd padding
 
-
 print_lines(halfLinePadding)
-for line in lines:
-    print(" " * halfColumnPadding + line)
+for line in lines: # what about empty lines?? Stupid
+    print(" " * halfColumnPadding + line) #someissue here
 print_lines(halfLinePadding)
 
 
