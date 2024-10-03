@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/bash
 
 # A4 propotions are: 78 char long (does not depend on character) x 58 lines
 
