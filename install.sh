@@ -43,6 +43,14 @@ else
     }
 fi
 
+
+# Install python2 if missing
+type python2 > /dev/null || {
+  echo ""
+  echo "Python2 not found, installing..."
+  sudo apt install python2
+}
+
 install_script printer/find-printer.sh
 install_script printer/make-list.py
 install_script printer/cowsay-random.sh
