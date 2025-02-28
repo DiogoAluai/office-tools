@@ -55,6 +55,7 @@ install_script printer/find-printer.sh
 install_script printer/make-list.py
 install_script printer/cowsay-random.sh
 install_script printer/office-print.sh
+install_script printer/office-print-pdf.sh
 install_script printer/print-random-cow.sh
 install_script printer/center-A4.py
 install_script printer/vertical-center-A4.sh
